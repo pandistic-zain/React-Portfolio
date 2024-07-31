@@ -108,7 +108,7 @@ export default function Banner() {
                 </svg>
               </button>
             </Col>
-            <Col xs={12} md={6} xl={5}>
+            <Col xs={12} md={6} xl={5} className="header-image">
               <img src={headerImg} alt="Header Image" />
             </Col>
           </Row>
