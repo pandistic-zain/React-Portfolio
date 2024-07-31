@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../Assets/images/logo.svg";
+import logo from "../Assets/images/logo.png";
 import linkedin from "../Assets/images/nav-icon1.svg";
 import facebook from "../Assets/images/nav-icon2.svg";
 import insta from "../Assets/images/nav-icon3.svg";
