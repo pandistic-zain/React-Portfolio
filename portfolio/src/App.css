@@ -50,7 +50,7 @@ h6 {
 /* Navbar Styling */
 .navbar {
   padding: 13px 0;
-  position:relative ;
+  position: relative;
   width: 100%;
   top: 0;
   z-index: 1000; /* Ensure navbar is above other content */
@@ -177,8 +177,6 @@ h6 {
 .contact-me:hover::before {
   width: 100%;
 }
-
-
 
 /* Custom Toggle Button */
 .toggle {
@@ -343,67 +341,68 @@ h6 {
   background-repeat: no-repeat;
   height: auto;
 }
-.header-image{
+.header-image {
   display: inline-block; /* Ensures that the element is properly displayed */
   animation: bounce 1s ease infinite;
- }
-  /* Keyframes for bounce animation */
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    10% {
-      transform: translateY(-10px);
-    }
-    20% {
-      transform: translateY(-20px);
-    }
-    30% {
-      transform: translateY(-25px);
-    }
-    40% {
-      transform: translateY(-30px);
-    }
-    50% {
-      transform: translateY(-25px);
-    }
-    60% {
-      transform: translateY(-20px);
-    }
-    70% {
-      transform: translateY(-15px);
-    }
-    80% {
-      transform: translateY(-10px);
-    }
-    90% {
-      transform: translateY(-5px);
-    }
+}
+/* Keyframes for bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  
-  @media (max-width: 991px) {
-    .banner h1 {
-      font-size: 40px;
-    }  
-    .banner p {
-      font-size: 15px;
-    }
+  10% {
+    transform: translateY(-10px);
   }
-  @media (max-width: 600px) {
-    .banner h1 {
-      font-size: 30px;
-    }  
-    .banner p {
-      font-size: 12px;
-    }
-    .header-image{
-      display: none;
-    }
-    .banner button{
-      margin-top: -2px;
-      margin-bottom: 5px;
-    }
+  20% {
+    transform: translateY(-20px);
   }
+  30% {
+    transform: translateY(-25px);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+  70% {
+    transform: translateY(-15px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 991px) {
+  .banner h1 {
+    font-size: 40px;
+  }
+  .banner p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 600px) {
+  .banner h1 {
+    font-size: 30px;
+  }
+  .banner p {
+    font-size: 12px;
+  }
+  .header-image {
+    display: none;
+  }
+  .banner button {
+    margin-top: -2px;
+    margin-bottom: 5px;
+  }
+}
 /* ------------------------------------------------------------------------------------------------------------- */
 /* Skill Section Start */
 .skill {
@@ -436,7 +435,7 @@ h6 {
   color: #b8b8b8;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  margin: 14px 0 75px 0;
+  margin: 14px 5px 75px 5px;
 }
 .skill-slider {
   position: relative;
@@ -455,10 +454,34 @@ h6 {
   z-index: -4;
 }
 @media (max-width: 991px) {
-
+  .skill h2 {
+    font-size: 50px;
+  }
+  .skill h3 {
+    font-size: 40px;
+  }
+  .skill h4 {
+    font-size: 22px;
+  }
+  .skill p {
+    font-size: 15px;
+    margin: 14px 5px 75px 5px;
+  }
 }
 @media (max-width: 600px) {
-
+  .skill h2 {
+    font-size: 40px;
+  }
+  .skill h3 {
+    font-size: 33px;
+  }
+  .skill h4 {
+    font-size: 15px !important;
+  }
+  .skill p {
+    font-size: 11px;
+    margin: 14px 5px 75px 5px;
+  }
 }
 
 /* Skills Css Finish */
@@ -611,10 +634,8 @@ h6 {
   z-index: -6;
 }
 @media (max-width: 991px) {
-
 }
 @media (max-width: 600px) {
-
 }
 /* Projects Css Finish */
 
@@ -627,7 +648,7 @@ h6 {
   font-family: inherit;
   justify-content: center;
 }
-.feedback-content{
+.feedback-content {
   background-color: #ffffff;
   border-radius: 65px;
   margin-top: 7px;
@@ -655,11 +676,10 @@ h6 {
   letter-spacing: 0.8px;
   line-height: 1.5em;
 }
-.feedbackshower .alert{
+.feedbackshower .alert {
   max-width: 500px; /* Adjust the width as needed */
   margin: 0 auto; /* Center the alert */
 }
-
 
 .feedbackshower .card {
   display: flex;
@@ -704,11 +724,12 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  border: 10px solid linear-gradient(
-    90.21deg,
-    rgba(170, 54, 124, 0.5) -5.91%,
-    rgba(74, 47, 189, 0.5) 100%
-  );
+  border: 10px solid
+    linear-gradient(
+      90.21deg,
+      rgba(170, 54, 124, 0.5) -5.91%,
+      rgba(74, 47, 189, 0.5) 100%
+    );
   border-radius: 10px;
   font-size: 20px;
   transform: rotateY(0deg);
@@ -730,23 +751,21 @@ h6 {
   align-items: center;
   border-radius: 10px;
   justify-content: center;
-  border: 10px solid linear-gradient(
-    90.21deg,
-    rgba(170, 54, 124, 0.5) -5.91%,
-    rgba(74, 47, 189, 0.5) 100%
-  );
+  border: 10px solid
+    linear-gradient(
+      90.21deg,
+      rgba(170, 54, 124, 0.5) -5.91%,
+      rgba(74, 47, 189, 0.5) 100%
+    );
   font-size: 24px;
   transform: rotateY(180deg);
 }
 @media (max-width: 991px) {
-
 }
 @media (max-width: 600px) {
-
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
 /* Feedback Css Ends */
-
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 /* Styling for Footer */
@@ -754,7 +773,6 @@ h6 {
   position: relative;
   overflow: hidden;
 }
-
 
 .footer-container .example-2 {
   display: flex;
