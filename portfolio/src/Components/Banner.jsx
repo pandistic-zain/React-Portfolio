@@ -25,22 +25,45 @@ export default function Banner() {
     };
   }, [text]);
   function tick() {
+    // Determine the index of the current phrase based on loopNum.
+    // loopNum is the index of the phrase in the toRotate array.
+    // The % operator ensures it wraps around if loopNum exceeds the length of toRotate.
     let i = loopNum % toRotate.length;
+
+    // Get the full phrase to be animated from the toRotate array.
     let fullText = toRotate[i];
+
+    // Update the displayed text based on whether characters are being added or removed.
+    // If isDeleting is true, remove one character from the end of the current text.
+    // Otherwise, add one character to the end of the current text.
     let updatedText = isDeleting
       ? fullText.substring(0, text.length - 1)
       : fullText.substring(0, text.length + 1);
+
+    // Update the text state with the new text value.
+    // This triggers a re-render with the updated text.
     setText(updatedText);
+
+    // If characters are being deleted, increase the speed of the animation.
+    // This is done by reducing the delta value (time between updates).
     if (isDeleting) {
       setDelta((prevDelta) => prevDelta / 2);
     }
+
+    // Check if the current text matches the full phrase and we are not deleting.
+    // If true, switch to deleting mode and set the delay before starting to delete.
+    // The period (2 seconds) is the time to wait before starting to delete.
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
       setDelta(period);
-    } else if (isDeleting && updatedText === "") {
-      setDelta(500);
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
+    }
+    // Check if characters are being deleted and the text is empty.
+    // If true, switch back to typing mode, set a short delay for typing,
+    // and move to the next phrase by incrementing loopNum.
+    else if (isDeleting && updatedText === "") {
+      setDelta(500); // Short delay before starting to type the next phrase.
+      setIsDeleting(false); // Switch back to typing mode.
+      setLoopNum(loopNum + 1); // Move to the next phrase in the toRotate array.
     }
   }
 
