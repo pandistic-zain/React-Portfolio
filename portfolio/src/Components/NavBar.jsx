@@ -56,7 +56,7 @@ export default function NavBar() {
             id="navbarScroll"
             className={isToggled ? "show" : ""}
           >
-          <Nav className="me-auto">
+          <Nav className="me-auto ms-auto">
             <Nav.Link
               href="#home"
               className={
