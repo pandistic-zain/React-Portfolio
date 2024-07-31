@@ -113,7 +113,7 @@ export default function NavBar() {
                 navigate(`/letsconnect`)
               }}
             >
-              <span>Lets Connect</span>
+              <span>Let's Connect</span>
             </button>
           </span>
         </Navbar.Collapse>
