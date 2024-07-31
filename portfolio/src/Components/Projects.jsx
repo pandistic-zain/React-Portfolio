@@ -41,7 +41,7 @@ const Projects = () => {
                 <div className="card d-flex justify-content-center mt-5">
                   <div className="card-content">
                     <img src={projectimg1} alt="" />
-                    <p className="card-title">Gym Project (G-7 Fitness Club)</p>
+                    <h3 className="card-title">Gym Project (G-7 Fitness Club)</h3>
                     <p className="card-para">
                       Developed a secure website for a gym owner which provides
                       facilities to owner as well as to client using HTML, CSS,
@@ -54,7 +54,7 @@ const Projects = () => {
                 <div className="card d-flex justify-content-center mt-5">
                   <div className="card-content">
                     <img src={projectimg1} alt="" />
-                    <p className="card-title">My Own Portfolio</p>
+                    <h3 className="card-title">My Own Portfolio</h3>
                     <p className="card-para">
                       Created my own portfolio Using HTML, CSS, JavaScript
                       Keeping the responsiveness in mind using Grids And my more
@@ -67,7 +67,7 @@ const Projects = () => {
                 <div className="card d-flex justify-content-center mt-5">
                   <div className="card-content">
                     <img src={projectimg1} alt="" />
-                    <p className="card-title">Store Management System</p>
+                    <h3 className="card-title">Store Management System</h3>
                     <p className="card-para">
                       Created a Store Management System using Java Adding the
                       Functionality of MySQL Database, File Handling, File
@@ -81,7 +81,7 @@ const Projects = () => {
                 <div className="card d-flex justify-content-center mt-5">
                   <div className="card-content">
                     <img src={projectimg1} alt="" />
-                    <p className="card-title">DSA Project (Using C++)</p>
+                    <h3 className="card-title">DSA Project (Using C++)</h3>
                     <p className="card-para">
                       My DSA Project Using C++ Named contact book merges
                       LinkedLists, Stacks, and Queues flawlessly, embodying OOP
@@ -94,7 +94,7 @@ const Projects = () => {
                 <div className="card d-flex justify-content-center mt-5">
                   <div className="card-content">
                     <img src={projectimg1} alt="" />
-                    <p className="card-title">React Portfolio</p>
+                    <h3 className="card-title">React Portfolio</h3>
                     <p className="card-para">
                       Built a dynamic and responsive portfolio using React and
                       Bootstrap, showcasing my skills in modern web development
@@ -107,7 +107,7 @@ const Projects = () => {
                 <div className="card d-flex justify-content-center mt-5">
                   <div className="card-content">
                     <img src={projectimg1} alt="" />
-                    <p className="card-title">C++ Compiler</p>
+                    <h3 className="card-title">C++ Compiler</h3>
                     <p className="card-para">
                       Leveraged my problem-solving skills to develop a C++
                       compiler, focusing on building a robust Lexical Analyzer,

@@ -467,6 +467,10 @@ h6 {
     font-size: 15px;
     margin: 14px 5px 75px 5px;
   }
+  .background-image-left {
+    width: 90%;
+    top: 25%;
+  }
 }
 @media (max-width: 600px) {
   .skill h2 {
@@ -481,6 +485,10 @@ h6 {
   .skill p {
     font-size: 11px;
     margin: 14px 5px 75px 5px;
+  }
+  .background-image-left {
+    width: 70%;
+    top: 22%;
   }
 }
 
@@ -634,8 +642,44 @@ h6 {
   z-index: -6;
 }
 @media (max-width: 991px) {
+  .projects h3 {
+    font-size: 40px;
+  }
+  .projects h4 {
+    font-size: 22px;
+  }
+  .card-content .card-title {
+    font-size: 35px;
+  }
+  
+  .card-content .card-para {
+    font-size: 17px;
+    opacity: 0.9;
+  }
+  .background-image-right {
+    width: 90%;
+    top: 55%;
+  }
 }
 @media (max-width: 600px) {
+  .projects h2 {
+    font-size: 40px;
+  }
+  .projects h4 {
+    font-size: 15px;
+  }
+  .card-content .card-title {
+    font-size: 25px;
+  }
+  
+  .card-content .card-para {
+    opacity: 0.9;
+    font-size: 12px;
+  }
+  .background-image-right {
+    width: 80%;
+    top: 53%;
+  }
 }
 /* Projects Css Finish */
 
@@ -742,11 +786,7 @@ h6 {
 
 .feedbackshower .card-back {
   background-color: #fff;
-  color: linear-gradient(
-    90.21deg,
-    rgba(170, 54, 124, 0.5) -5.91%,
-    rgba(74, 47, 189, 0.5) 100%
-  );
+  color:#121212;
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -761,8 +801,38 @@ h6 {
   transform: rotateY(180deg);
 }
 @media (max-width: 991px) {
+  .feedbackshower h2 {
+    font-size: 50px;
+  }
+  .feedbackshower h3 {
+    font-size: 40px;
+  }
+  .feedbackshower h4 {
+    font-size: 22px;
+  }
+  .feedbackshower p {
+    font-size: 13px;
+  }
+  .feedbackshower .alert {
+    max-width: 300px; /* Adjust the width as needed */
+  }
 }
 @media (max-width: 600px) {
+  .feedbackshower h2 {
+    font-size: 45px;
+  }
+  .feedbackshower h3 {
+    font-size: 35px;
+  }
+  .feedbackshower h4 {
+    font-size: 20px;
+  }
+  .feedbackshower p {
+    font-size: 13px;
+  }
+  .feedbackshower .alert {
+    max-width: 200px; /* Adjust the width as needed */
+  }
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
 /* Feedback Css Ends */
