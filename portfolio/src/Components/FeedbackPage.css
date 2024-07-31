@@ -33,10 +33,10 @@
 
 .form-container button:active {
   -o-transform: scale(0.95);
-  -webkit-transform: scale(0.95); 
+  -webkit-transform: scale(0.95);
   -moz-transform: scale(0.95);
-  -ms-transform: scale(0.95); 
-  transform: scale(0.95); 
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .form-container .form {
@@ -82,7 +82,7 @@
 }
 
 .form-container .form-group input::placeholder {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .form-container .form-group input:focus {

@@ -231,8 +231,22 @@ h6 {
   .navbar-toggler {
     display: none;
   }
+  .navbar-link {
+    margin-left: 20px !important;
+  }
+  .navbar-brand img {
+    width: 200px;
+  }
 }
-
+@media (max-width: 600px) {
+  .navbar-brand img {
+    width: 150px;
+  }
+  .navbar-link {
+    font-size: 15px !important;
+    margin-left: 20px !important;
+  }
+}
 .navbar-collapse {
   justify-content: flex-start;
   transition: all 1s ease-in;
@@ -299,6 +313,8 @@ h6 {
     rgba(170, 54, 124, 0.5) -5.91%,
     rgba(74, 47, 189, 0.5) 100%
   );
+  box-shadow: 9px 9px 33px rgba(170, 54, 124, 0.9),
+    -9px -9px 33px rgba(74, 47, 189, 0.9);
 }
 
 .banner button > svg {
@@ -329,8 +345,8 @@ h6 {
 }
 .header-image{
   display: inline-block; /* Ensures that the element is properly displayed */
-  animation: bounce 1s ease infinite; /* Apply the bounce animation */
-}
+  animation: bounce 1s ease infinite;
+ }
   /* Keyframes for bounce animation */
   @keyframes bounce {
     0%, 100% {
@@ -365,7 +381,29 @@ h6 {
     }
   }
   
-  
+  @media (max-width: 991px) {
+    .banner h1 {
+      font-size: 40px;
+    }  
+    .banner p {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 600px) {
+    .banner h1 {
+      font-size: 30px;
+    }  
+    .banner p {
+      font-size: 12px;
+    }
+    .header-image{
+      display: none;
+    }
+    .banner button{
+      margin-top: -2px;
+      margin-bottom: 5px;
+    }
+  }
 /* ------------------------------------------------------------------------------------------------------------- */
 /* Skill Section Start */
 .skill {
