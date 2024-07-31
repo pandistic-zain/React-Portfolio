@@ -1,5 +1,5 @@
 .form-container {
-  width: 80%;
+  width: 90%;
   background: linear-gradient(#212121, #212121) padding-box,
     linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 3px solid transparent;
@@ -82,6 +82,7 @@
 }
 
 .form-container .form-group input::placeholder {
+  color: #6d6d6d;
   opacity: 0.8;
 }
 
@@ -134,10 +135,7 @@
   transform: translateY(-2px);
 }
 .title {
-  position: relative; /* Ensure this container is positioned */
-}
-.title {
-  position: relative; /* Ensure this container is positioned */
+  position: relative;
 }
 
 .title button {
@@ -194,4 +192,55 @@
   bottom: 0;
   width: 35%;
   z-index: -5;
+}
+@media (max-width: 991px) {
+  .bg-image-left {
+    top: -15%;
+    width: 95%;
+  }
+  .bg-image-right {
+    top: 18%;
+    width: 90%;
+  }
+  .title h1 {
+    font-size: 30px;
+    margin-left: auto;
+  }
+  .title button {
+    height: 2.7em;
+    width: 85px;
+    margin-right: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .bg-image-left {
+    top: -15%;
+    width: 95%;
+  }
+  .bg-image-right {
+    top: 18%;
+    width: 90%;
+  }
+  .title h1 {
+    font-size: 20px;
+    margin-left: auto;
+  }
+  .title button {
+    height: 2.4em;
+    width: 72px;
+    margin-right: 5px !important;
+  }
+}
+@media (max-width: 333px) {
+  .title button {
+    display: none;
+  }
+  .title h1 {
+    font-size: 26px;
+    margin-bottom: -19px;
+  }
+  .form-container {
+    position: relative;
+    top: 10%;
+  }
 }

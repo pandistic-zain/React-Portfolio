@@ -403,6 +403,11 @@ h6 {
     margin-bottom: 5px;
   }
 }
+@media (max-width: 333px) {
+  .banner button {
+    display: none;
+  }
+}
 /* ------------------------------------------------------------------------------------------------------------- */
 /* Skill Section Start */
 .skill {
@@ -491,7 +496,25 @@ h6 {
     top: 22%;
   }
 }
-
+@media (max-width: 333px) {
+  .skill h2 {
+    font-size: 30px;
+  }
+  .skill h3 {
+    font-size: 26px;
+  }
+  .skill h4 {
+    font-size: 10px !important;
+  }
+  .skill p {
+    font-size: 7px;
+    margin: 14px 5px 75px 5px;
+  }
+  .background-image-left {
+    width: 80%;
+    top: 22%;
+  }
+}
 /* Skills Css Finish */
 
 /* ------------------------------------------------------------------------------------------------------------------- */
@@ -651,7 +674,7 @@ h6 {
   .card-content .card-title {
     font-size: 35px;
   }
-  
+
   .card-content .card-para {
     font-size: 17px;
     opacity: 0.9;
@@ -671,10 +694,30 @@ h6 {
   .card-content .card-title {
     font-size: 25px;
   }
-  
+
   .card-content .card-para {
     opacity: 0.9;
     font-size: 12px;
+  }
+  .background-image-right {
+    width: 80%;
+    top: 53%;
+  }
+}
+@media (max-width: 333px) {
+  .projects h2 {
+    font-size: 28px;
+  }
+  .projects h4 {
+    font-size: 9px;
+  }
+  .card-content .card-title {
+    font-size: 17px;
+  }
+
+  .card-content .card-para {
+    opacity: 0.9;
+    font-size: 8px;
   }
   .background-image-right {
     width: 80%;
@@ -786,7 +829,7 @@ h6 {
 
 .feedbackshower .card-back {
   background-color: #fff;
-  color:#121212;
+  color: #121212;
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -832,6 +875,28 @@ h6 {
   }
   .feedbackshower .alert {
     max-width: 200px; /* Adjust the width as needed */
+  }
+}
+@media (max-width: 333px) {
+  .feedbackshower h2 {
+    font-size: 30px;
+  }
+  .feedbackshower h3 {
+    font-size: 22px;
+  }
+  .feedbackshower h4 {
+    font-size: 14px;
+  }
+  .feedbackshower p {
+    font-size: 8px;
+  }
+  .feedbackshower .alert {
+    max-width: 170px; /* Adjust the width as needed */
+  }
+  .feedbackshower .card {
+    min-width: 230px;
+    min-height: 150px;
+
   }
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
