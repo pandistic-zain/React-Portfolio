@@ -1,18 +1,7 @@
-.feedback-page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-.animated-content {
-  flex: 1;
-}
-
-footer {
-  flex-shrink: 0;
-}
 .form-container {
   width: 90%;
+  height: auto;
   background: linear-gradient(#212121, #212121) padding-box,
     linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 3px solid transparent;
@@ -34,21 +23,15 @@ footer {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
 }
 
 .form-container button:active {
-  -o-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -moz-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
 
@@ -72,7 +55,8 @@ footer {
   font-size: 12px;
 }
 
-.form-container .form-group input {
+.form-container .form-group input,
+.form-container .form-group textarea {
   width: 100%;
   padding: 12px 16px;
   border-radius: 8px;
@@ -83,27 +67,17 @@ footer {
 }
 
 .form-container .form-group textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 8px;
   resize: none;
-  color: #fff;
   height: 96px;
-  border: 1px solid #414141;
-  background-color: transparent;
-  font-family: inherit;
 }
 
-.form-container .form-group input::placeholder {
+.form-container .form-group input::placeholder,
+.form-container .form-group textarea::placeholder {
   color: #6d6d6d;
   opacity: 0.8;
 }
 
-.form-container .form-group input:focus {
-  outline: none;
-  border-color: #e81cff;
-}
-
+.form-container .form-group input:focus,
 .form-container .form-group textarea:focus {
   outline: none;
   border-color: #e81cff;
@@ -111,10 +85,10 @@ footer {
 
 .form-container .form-submit-btn {
   font-family: inherit;
-  color: #000000;
+  color: #000;
   font-weight: 600;
   width: 40%;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #414141;
   padding: 12px 16px;
   font-size: inherit;
@@ -131,22 +105,12 @@ footer {
 
 .form-container .form-submit-btn:hover {
   color: #fff;
-  font-weight: 600;
-  background-image: linear-gradient(
-    90.21deg,
-    rgba(170, 54, 124, 0.9) -5.91%,
-    rgba(74, 47, 189, 0.9) 100%
-  );
-  border-image: linear-gradient(
-      90.21deg,
-      rgba(170, 54, 124, 0.9) -5.91%,
-      rgba(74, 47, 189, 0.9) 100%
-    )
-    1;
-  box-shadow: 9px 9px 33px rgba(170, 54, 124, 0.9),
-    -9px -9px 33px rgba(74, 47, 189, 0.9);
+  background-image: linear-gradient(90.21deg, rgba(170, 54, 124, 0.9) -5.91%, rgba(74, 47, 189, 0.9) 100%);
+  border-image: linear-gradient(90.21deg, rgba(170, 54, 124, 0.9) -5.91%, rgba(74, 47, 189, 0.9) 100%) 1;
+  box-shadow: 9px 9px 33px rgba(170, 54, 124, 0.9), -9px -9px 33px rgba(74, 47, 189, 0.9);
   transform: translateY(-2px);
 }
+
 .title {
   position: relative;
 }
@@ -166,11 +130,7 @@ footer {
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(
-    90.21deg,
-    rgba(170, 54, 124, 0.9) -5.91%,
-    rgba(74, 47, 189, 0.9) 100%
-  );
+  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.9) -5.91%, rgba(74, 47, 189, 0.9) 100%);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -187,33 +147,34 @@ footer {
 }
 
 .title button:hover {
-  box-shadow: 9px 9px 33px rgba(170, 54, 124, 0.9),
-    -9px -9px 33px rgba(74, 47, 189, 0.9);
+  box-shadow: 9px 9px 33px rgba(170, 54, 124, 0.9), -9px -9px 33px rgba(74, 47, 189, 0.9);
   transform: translateY(-2px);
 }
-.bg-image-left {
-  top: -15%;
-  position: absolute;
-  bottom: 0;
-  width: 40%;
-  z-index: -4;
-}
+
+.bg-image-left,
 .bg-image-right {
   position: absolute;
+  bottom: 0;
+  z-index: -4;
+}
+
+.bg-image-left {
+  top: -15%;
+  width: 40%;
+}
+
+.bg-image-right {
   right: 0;
   top: 18%;
-  bottom: 0;
   width: 35%;
   z-index: -5;
 }
+
 @media (max-width: 991px) {
-  .bg-image-left {
+  .bg-image-left,
+  .bg-image-right {
     top: -15%;
     width: 95%;
-  }
-  .bg-image-right {
-    top: 18%;
-    width: 90%;
   }
   .title h1 {
     font-size: 30px;
@@ -225,15 +186,8 @@ footer {
     margin-right: 5px;
   }
 }
+
 @media (max-width: 600px) {
-  .bg-image-left {
-    top: -15%;
-    width: 95%;
-  }
-  .bg-image-right {
-    top: 18%;
-    width: 90%;
-  }
   .title h1 {
     font-size: 20px;
     margin-left: auto;
@@ -241,9 +195,10 @@ footer {
   .title button {
     height: 2.4em;
     width: 72px;
-    margin-right: 5px !important;
+    margin-right: 5px;
   }
 }
+
 @media (max-width: 333px) {
   .title button {
     display: none;

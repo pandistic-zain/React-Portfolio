@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer-container text-white mt-5 p-4 text-center">
+    <footer className="footer-container text-white mt-5 p-4 mb-0 text-center">
       <Container>
         <Row>
           <Col md={4} className="mb-3">
@@ -134,6 +134,18 @@ const Footer = () => {
                 <div className="tooltip">Youtube</div>
               </li>
               </ul>
+            </motion.div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+          <motion.div
+              whileInView={{ opacity: 1, y: 0 }} // Animation state when in view
+              initial={{ opacity: 0, y: 20 }} // Initial state before entering the view
+              transition={{ duration: 0.6, ease: "easeOut" }} // Transition properties
+              className="footer-text text-center"
+            >
+              &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
             </motion.div>
           </Col>
         </Row>

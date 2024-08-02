@@ -24,13 +24,16 @@ const FeedbackPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     FeedbackServices.postFeedback(feedback)
-      .then((response) => {
-        console.log(response.data);
+      .then((Response) => {
+        console.log(Response.data);
         navigate("/");
       })
       .catch((error) => {
         console.log(error);
       });
+    console.log("Feedback:", feedback.message);
+    console.log("Email:", feedback.email);
+    console.log("Name:", feedback.name);
     setFeedback({
       name: "",
       email: "",
@@ -39,13 +42,13 @@ const FeedbackPage = () => {
   };
 
   return (
-    <div className="feedback-page-wrapper">
+    <>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
-        className="animated-content"
+        className="animated-content" // Apply a class to the animated content
       >
         <Container className="d-flex justify-content-center align-items-center vh-100">
           <Row className="form-container">
@@ -56,7 +59,7 @@ const FeedbackPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 2.5 }}
               >
-                <button onClick={() => navigate("/")}>
+                <button onClick={() => { navigate("/") }}>
                   <svg
                     height="16"
                     width="16"
@@ -130,7 +133,7 @@ const FeedbackPage = () => {
           alt=""
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
         />
         <motion.img
           className="bg-image-right"
@@ -138,11 +141,11 @@ const FeedbackPage = () => {
           alt=""
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
         />
       </motion.div>
       <Footer />
-    </div>
+    </>
   );
 };
 
