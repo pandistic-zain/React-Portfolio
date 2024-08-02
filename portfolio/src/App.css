@@ -452,7 +452,7 @@ h6 {
   margin: 0 auto 15px auto;
 }
 .background-image-left {
-  top: 28%;
+  top: 20%;
   position: absolute;
   bottom: 0;
   width: 40%;
@@ -659,7 +659,7 @@ h6 {
 .background-image-right {
   position: absolute;
   right: 0;
-  top: 68%;
+  top: 58%;
   bottom: 0;
   width: 35%;
   z-index: -6;

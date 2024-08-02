@@ -1,3 +1,16 @@
+.feedback-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.animated-content {
+  flex: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
 .form-container {
   width: 90%;
   background: linear-gradient(#212121, #212121) padding-box,

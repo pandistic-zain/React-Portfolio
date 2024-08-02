@@ -44,7 +44,7 @@ const FeedbackPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.5 }}
         className="animated-content"
       >
         <Container className="d-flex justify-content-center align-items-center vh-100">
@@ -54,7 +54,7 @@ const FeedbackPage = () => {
                 className="d-flex justify-content-center align-items-center title"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1.5 }}
+                transition={{ duration: 2.5 }}
               >
                 <button onClick={() => navigate("/")}>
                   <svg
@@ -75,7 +75,7 @@ const FeedbackPage = () => {
                 className="form mt-5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1.5 }}
+                transition={{ duration: 2.5 }}
               >
                 <Form onSubmit={handleSubmit}>
                   <Form.Group controlId="formName" className="form-group">
