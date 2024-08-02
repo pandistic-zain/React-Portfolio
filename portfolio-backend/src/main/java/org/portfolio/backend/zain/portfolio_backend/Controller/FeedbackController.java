@@ -1,20 +1,25 @@
 package org.portfolio.backend.zain.portfolio_backend.Controller;
 
+import java.io.IOException;
 import java.util.List;
 
+import org.portfolio.backend.zain.portfolio_backend.Services.DownloadService;
 import org.portfolio.backend.zain.portfolio_backend.Services.fbServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
 public class FeedbackController {
+
     @Autowired
-    fbServices fbService;
+    private fbServices fbService;
+    private DownloadService DServices;
 
     @GetMapping("/letsconnect")
     public List<Feedback> getAllFeedbacks() {
@@ -23,18 +28,12 @@ public class FeedbackController {
 
     @PostMapping("/letsconnect")
     public String postFeedback(@RequestBody Feedback fb) {
-        // Debugging outputs
-        // System.out.println("Received Feedback:");
-        // System.out.println("ID: " + fb.getId());
-        // System.out.println("Name: " + fb.getName());
-        // System.out.println("Email: " + fb.getEmail());
-        // System.out.println("Message: " + fb.getMessage());
+        return fbService.postFeedback(fb);
+    }
 
-        String response = fbService.postFeedback(fb);
+    @GetMapping("/download-cv")
+    public ResponseEntity<byte[]> downloadCV() throws IOException {
 
-        // Debugging output for response
-        // System.out.println("Response from service: " + response);
-
-        return response;
+        return DServices.getCV() ;
     }
 }
