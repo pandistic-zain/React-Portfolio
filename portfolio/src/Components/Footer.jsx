@@ -1,31 +1,50 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import footer from "../Assets/images/footer-bg.png";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <footer className="footer-container  text-white mt-5 p-4 text-center">
+    <footer className="footer-container text-white mt-5 p-4 text-center">
       <Container>
         <Row>
           <Col md={4} className="mb-3">
-            <h5>About Me</h5>
-            <p>
-              I am a passionate Java web developer with experience in creating
-              dynamic and responsive websites using the latest technologies.
-            </p>
-          </Col>
-          <Col md={4} className="mb-3 ">
-            <h5>Contact Me</h5>
-            <ul className="list-unstyled example-2 d-flex flex-column">
-              <li>Email: pandistic.zain@gmail.com</li>
-              <li>Phone: +92 3446558870</li>
-              <li>Address: House # 35-A Wapada Calony G-7/4 Islamabad</li>
-            </ul>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h5>About Me</h5>
+              <p>
+                I am a passionate Java web developer with experience in creating
+                dynamic and responsive websites using the latest technologies.
+              </p>
+            </motion.div>
           </Col>
           <Col md={4} className="mb-3">
-            <h5>Follow Me</h5>
-            <ul className="list-unstyled example-2">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            >
+              <h5>Contact Me</h5>
+              <ul className="list-unstyled example-2 d-flex flex-column">
+                <li>Email: pandistic.zain@gmail.com</li>
+                <li>Phone: +92 3446558870</li>
+                <li>Address: House # 35-A Wapada Calony G-7/4 Islamabad</li>
+              </ul>
+            </motion.div>
+          </Col>
+          <Col md={4} className="mb-3">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            >
+              <h5>Follow Me</h5>
+              <ul className="list-unstyled example-2">
               <li className="icon-content">
                  <Link to="https://www.linkedin.com/in/zain-ul-abideen-b9215a283/" aria-label="LinkedIn" data-social="linkedin">
                   <div className="filled"></div>
@@ -114,12 +133,8 @@ const Footer = () => {
                 </Link>
                 <div className="tooltip">Youtube</div>
               </li>
-            </ul>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
+              </ul>
+            </motion.div>
           </Col>
         </Row>
       </Container>

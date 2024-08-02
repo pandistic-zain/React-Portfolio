@@ -6,7 +6,8 @@ import logo from "../Assets/images/logo.png";
 import linkedin from "../Assets/images/nav-icon1.svg";
 import facebook from "../Assets/images/nav-icon2.svg";
 import insta from "../Assets/images/nav-icon3.svg";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -35,27 +36,29 @@ export default function NavBar() {
     setIsToggled(!isToggled);
   };
 
-
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""} >
+    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
-        <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" />
-        </Navbar.Brand>
+        <motion.div
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 1.5,type:'spring',stiffness:120 }}
+        >
+          <Navbar.Brand href="#home">
+            <img src={logo} alt="Logo" />
+          </Navbar.Brand>
+        </motion.div>
         {/* Custum Toggle Button */}
         <div
-            onClick={handleToggle}
-            className={`toggle ${isToggled ? "open" : ""}`}
-          >
-            <div className="bars" id="bar1"></div>
-            <div className="bars" id="bar2"></div>
-            <div className="bars" id="bar3"></div>
-          </div>
+          onClick={handleToggle}
+          className={`toggle ${isToggled ? "open" : ""}`}
+        >
+          <div className="bars" id="bar1"></div>
+          <div className="bars" id="bar2"></div>
+          <div className="bars" id="bar3"></div>
+        </div>
 
-          <Navbar.Collapse
-            id="navbarScroll"
-            className={isToggled ? "show" : ""}
-          >
+        <Navbar.Collapse id="navbarScroll" className={isToggled ? "show" : ""}>
           <Nav className="me-auto ms-auto">
             <Nav.Link
               href="#home"
@@ -94,7 +97,12 @@ export default function NavBar() {
               Feedbacks
             </Nav.Link>
           </Nav>
-          <span className="navbar-text">
+          <motion.span
+            className="navbar-text"
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.1, duration: 1.5,type:'spring',stiffness:120 }}
+          >
             <div className="social-icons">
               <Link to="https://www.linkedin.com/in/zain-ul-abideen-b9215a283/">
                 <img src={linkedin} alt="Icon1" />
@@ -110,12 +118,12 @@ export default function NavBar() {
               className="contact-me"
               onClick={() => {
                 console.log("Contact Me Form");
-                navigate(`/letsconnect`)
+                navigate(`/letsconnect`);
               }}
             >
               <span>Let's Connect</span>
             </button>
-          </span>
+          </motion.span>
         </Navbar.Collapse>
       </Container>
     </Navbar>

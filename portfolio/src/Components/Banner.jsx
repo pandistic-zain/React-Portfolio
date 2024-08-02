@@ -3,6 +3,8 @@ import "../App.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import headerImg from "../Assets/images/header-img.svg";
+import { motion } from "framer-motion";
+
 export default function Banner() {
   const navigate = useNavigate();
   const [loopNum, setLoopNum] = useState(0);
@@ -16,6 +18,7 @@ export default function Banner() {
     "Java Web Developer",
   ];
   const period = 2000;
+
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -24,96 +27,93 @@ export default function Banner() {
       clearInterval(ticker);
     };
   }, [text]);
+
   function tick() {
-    // Determine the index of the current phrase based on loopNum.
-    // loopNum is the index of the phrase in the toRotate array.
-    // The % operator ensures it wraps around if loopNum exceeds the length of toRotate.
     let i = loopNum % toRotate.length;
-
-    // Get the full phrase to be animated from the toRotate array.
     let fullText = toRotate[i];
-
-    // Update the displayed text based on whether characters are being added or removed.
-    // If isDeleting is true, remove one character from the end of the current text.
-    // Otherwise, add one character to the end of the current text.
     let updatedText = isDeleting
       ? fullText.substring(0, text.length - 1)
       : fullText.substring(0, text.length + 1);
 
-    // Update the text state with the new text value.
-    // This triggers a re-render with the updated text.
     setText(updatedText);
 
-    // If characters are being deleted, increase the speed of the animation.
-    // This is done by reducing the delta value (time between updates).
     if (isDeleting) {
       setDelta((prevDelta) => prevDelta / 2);
     }
 
-    // Check if the current text matches the full phrase and we are not deleting.
-    // If true, switch to deleting mode and set the delay before starting to delete.
-    // The period (2 seconds) is the time to wait before starting to delete.
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
       setDelta(period);
-    }
-    // Check if characters are being deleted and the text is empty.
-    // If true, switch back to typing mode, set a short delay for typing,
-    // and move to the next phrase by incrementing loopNum.
-    else if (isDeleting && updatedText === "") {
-      setDelta(500); // Short delay before starting to type the next phrase.
-      setIsDeleting(false); // Switch back to typing mode.
-      setLoopNum(loopNum + 1); // Move to the next phrase in the toRotate array.
+    } else if (isDeleting && updatedText === "") {
+      setDelta(500);
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
     }
   }
 
   return (
-    <>
-      <section className="banner" id="home">
+    <section className="banner" id="home">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <Container>
           <Row className="align-items-center">
             <Col xs={12} md={6} xl={7}>
-              <span className="tagline">Welcome To My Portfolio</span>
-              <h1>
-                {" "}
-                {`Hi I'm `} <span className="wrap"> {text}</span>
-              </h1>
-              <p>
-                Hello! I'm a Java developer passionate about creating elegant,
-                efficient solutions. From algorithms to software architectures,
-                I focus on performance and maintainability to deliver reliable,
-                scalable applications that exceed user expectations. Let's build
-                lasting software together! 💻
-              </p>
-              <button onClick={() => navigate("/letsconnect")}>
-                <span> Let's Connect</span>
-                <svg
-                  width="34"
-                  height="34"
-                  viewBox="0 0 74 74"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="37"
-                    cy="37"
-                    r="35.5"
-                    stroke="black"
-                    stroke-width="3"
-                  ></circle>
-                  <path
-                    d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
-                    fill="black"
-                  ></path>
-                </svg>
-              </button>
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <span className="tagline">Welcome To My Portfolio</span>
+                <h1>
+                  {" "}
+                  {`Hi I'm `} <span className="wrap"> {text}</span>
+                </h1>
+                <p>
+                  Hello! I'm a Java developer passionate about creating elegant,
+                  efficient solutions. From algorithms to software architectures,
+                  I focus on performance and maintainability to deliver reliable,
+                  scalable applications that exceed user expectations. Let's build
+                  lasting software together! 💻
+                </p>
+                <button onClick={() => navigate("/letsconnect")}>
+                  <span> Let's Connect</span>
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 74 74"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="37"
+                      cy="37"
+                      r="35.5"
+                      stroke="black"
+                      strokeWidth="3"
+                    ></circle>
+                    <path
+                      d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </button>
+              </motion.div>
             </Col>
             <Col xs={12} md={6} xl={5} className="header-image">
-              <img src={headerImg} alt="Header Image" />
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <img src={headerImg} alt="Header Image" />
+              </motion.div>
             </Col>
           </Row>
         </Container>
-      </section>
-    </>
+      </motion.div>
+    </section>
   );
 }
