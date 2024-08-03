@@ -42,7 +42,7 @@ export default function NavBar() {
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement("a");
         link.href = url;
-        link.setAttribute("download", "your_cv.pdf"); // File name here
+        link.setAttribute("download", "zain_cv.pdf"); // File name here
         document.body.appendChild(link);
         link.click();
       })
