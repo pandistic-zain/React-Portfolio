@@ -10,7 +10,9 @@ public class PortfolioBackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PortfolioBackendApplication.class, args);
-		System.out.println("Portfolio Running");
+		System.out.println("-----------------------------");
+		System.out.println("| Portfolio Running | ");
+		System.out.println("-----------------------------");
 	}
 	
 
