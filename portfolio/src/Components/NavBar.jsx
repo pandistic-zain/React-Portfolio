@@ -143,7 +143,6 @@ export default function NavBar() {
               onClick={() => {
                 handleDownload();
                 console.log("Download Cv Button is Clicked");
-               
               }}
             >
               <span>Download CV</span>
