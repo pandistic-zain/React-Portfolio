@@ -8,6 +8,7 @@ import facebook from "../Assets/images/nav-icon2.svg";
 import insta from "../Assets/images/nav-icon3.svg";
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import CVService from "../Services/CVServices";
 
 export default function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -35,14 +36,32 @@ export default function NavBar() {
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
-
+  const handleDownload = () => {
+    CVService.getCV()
+      .then((response) => {
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "your_cv.pdf"); // File name here
+        document.body.appendChild(link);
+        link.click();
+      })
+      .catch((error) => {
+        console.error("There was an error downloading the CV!", error);
+      });
+  };
   return (
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
         <motion.div
           initial={{ x: -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.1, duration: 1.5,type:'spring',stiffness:120 }}
+          transition={{
+            delay: 0.1,
+            duration: 1.5,
+            type: "spring",
+            stiffness: 120,
+          }}
         >
           <Navbar.Brand href="#home">
             <img src={logo} alt="Logo" />
@@ -101,7 +120,12 @@ export default function NavBar() {
             className="navbar-text"
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.1, duration: 1.5,type:'spring',stiffness:120 }}
+            transition={{
+              delay: 0.1,
+              duration: 1.5,
+              type: "spring",
+              stiffness: 120,
+            }}
           >
             <div className="social-icons">
               <Link to="https://www.linkedin.com/in/zain-ul-abideen-b9215a283/">
@@ -117,11 +141,12 @@ export default function NavBar() {
             <button
               className="contact-me"
               onClick={() => {
-                console.log("Contact Me Form");
-                navigate(`/letsconnect`);
+                handleDownload();
+                console.log("Download Cv Button is Clicked");
+               
               }}
             >
-              <span>Let's Connect</span>
+              <span>Download CV</span>
             </button>
           </motion.span>
         </Navbar.Collapse>
